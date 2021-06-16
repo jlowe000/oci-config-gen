@@ -16,14 +16,14 @@ Execute:
 
 To create the profile (and the API Key)
 ```
-$ git clone https://github.com/jlowe000/oci-config-gen
-$ cd oci-config-gen
-$ chmod 755 user-api-key.sh
-$ . ./user-api-key.sh
+git clone https://github.com/jlowe000/oci-config-gen
+cd oci-config-gen
+chmod 755 user-api-key.sh
+. ./user-api-key.sh
 ```
 
 To delete the API Key
 ```
-$ . ~/.oci/.oci_profile
-$ oci iam user api-key delete --user-id $USER_OCID --fingerprint $FINGERPRINT --force
+. ~/.oci/.oci_profile
+oci iam user api-key delete --user-id $USER_OCID --fingerprint $FINGERPRINT --force
 ```
