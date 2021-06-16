@@ -4,7 +4,7 @@ export USER=`oci iam user list | jq -r ".data | map(select(.id == \"$OCI_CS_USER
 echo $USER
 # Determine current (if the current user is an OCI IDCS User)
 if [ "$USER" == "[]" ]; then
-  export USER=`oci iam user list | jq -r ".data | map(select(.\"identity-provider-id\" == (\"$OCI_CS_USER_OCID\" | split(\"/\") | .[0])))"`
+  export USER=`oci iam user list | jq -r ".data | map(select( (.\"identity-provider-id\" == (\"$OCI_CS_USER_OCID\" | split(\"/\") | .[0])) and ((.name | split(\"/\") | .[1]) == (\"$OCI_CS_USER_OCID\" | split(\"/\") | .[1]) ) ))"`
   echo $USER
 fi
 # Capture User's OCID
