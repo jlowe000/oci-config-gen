@@ -10,7 +10,7 @@ Output:
 - An OCI SDK config file and a private / public key pair used for the API Key.
 - A profile script that has a select set of environment variables (Tenancy OCID, User OCID, Fingerprint, Bucket Namespace)
 - The current user has the public key uploaded as an API Key.
-- A tar.gz file in the ~/.oci directory with the contents that can be downloaded from the Cloud Shell.
+- A tar.gz file in the home directory with the contents that can be downloaded from the Cloud Shell.
 
 Execute:
 
@@ -21,6 +21,8 @@ cd oci-config-gen
 chmod 755 user-api-key.sh
 . ./user-api-key.sh
 ```
+
+To download the zip file, use the Download menu option in the Cloud Shell.
 
 To delete the API Key
 ```
