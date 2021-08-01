@@ -34,6 +34,8 @@ echo "key_file=~/.oci/oci_api_key_${NOW}.pem" >> ~/.oci/config
 echo "# Export of key tenant variables" > ~/.oci/.oci_profile
 echo "export TENANCY_OCID=${OCI_TENANCY}" >> ~/.oci/.oci_profile
 echo "export USER_OCID=${USER_OCID}" >> ~/.oci/.oci_profile
+echo "export FINGERPRINT=${FINGERPRINT}" >> ~/.oci/.oci_profile
 echo "export BUCKET_NS=${BUCKET_NS}" >> ~/.oci/.oci_profile
 
-tar czvf oci_api_key_${NOW}.tar.gz ~/.oci
+cd ~
+tar czvf oci_api_key_${NOW}.tar.gz .oci
